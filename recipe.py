@@ -68,5 +68,12 @@ class RomanNumeralConverterTest(unittest.TestCase):
         self.assertRaises(TypeError, self.value.convert_to_decimal, None)
         
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(RomanNumeralConverterTest)
+    import sys
+    suite = unittest.TestSuite()
+    if len(sys.argv) == 1:
+        suite = unittest.TestLoader().loadTestsFromTestCase(RomanNumeralConverterTest)
+    else:
+        for test_name in sys.argv[1:]:
+            suite.addTest(RomanNumeralConverterTest(test_name))
+
     unittest.TextTestRunner(verbosity=2).run(suite)
