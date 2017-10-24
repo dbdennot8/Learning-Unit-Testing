@@ -3,7 +3,8 @@
 
 class RomanNumeralConverter(object):
     def __init__(self):
-        self.digital_map = {"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1}
+        self.digital_map = {"M": 1000, "D": 500,
+                            "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
 
     def convert_to_decimal(self, roman_numeral):
         '''Return the roman numeral given at initialization as a decimal value'''
@@ -46,4 +47,3 @@ class RomanNumeralConverter(object):
             val += "I"
             decimal_number -= 1
         return val
-
