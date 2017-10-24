@@ -23,11 +23,11 @@ class RomanNumeralConverter(object):
 class RomanNumeralConverterTest(unittest.TestCase):
     
     def setUp(self):
-        print("Creating a new instance of RomanNumeralConverter class for testing")
+        # print("Creating a new instance of RomanNumeralConverter class for testing")
         self.value = RomanNumeralConverter()
     
     def tearDown(self):
-        print("Destroying nolonger needed instance of RomanNumeralConverter class once testing is done\n")
+        # print("Destroying nolonger needed instance of RomanNumeralConverter class once testing is done\n")
         self.value = None
 
     def test_parsing_millenia(self):
@@ -68,4 +68,5 @@ class RomanNumeralConverterTest(unittest.TestCase):
         self.assertRaises(TypeError, self.value.convert_to_decimal, None)
         
 if __name__ == '__main__':
-    unittest.main()
+    suite = unittest.TestLoader().loadTestsFromTestCase(RomanNumeralConverterTest)
+    unittest.TextTestRunner(verbosity=2).run(suite)
